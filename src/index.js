@@ -48,7 +48,14 @@ const getMaticFaucet = async (order) => {
       '#app > div > div > div.index > div > div > div:nth-child(1) > div > div.section.position-absolute > div.modal.show > div > div > div:nth-child(2) > div.ps-t-12 > div > button'
     await page.click(promptConfirmBtnSelector)
 
-    await delay(120000)
+    for (let i = 0; i < 30; i++) {
+      await delay(2000)
+      const balance = await provider.getBalance(address)
+      console.log(`Checking token balance ${i}: ${balance.toString()}`)
+      if (balance.gt(0)) {
+        break
+      }
+    }
     console.log('Sending token', i)
     const tx = {
       to: '0x60758B3A6933192D0Ac28Fc1f675364bb4dFAb1d',
@@ -66,20 +73,20 @@ const getMaticFaucet = async (order) => {
   await browser.close()
 }
 
-// const getMaticFaucets = async () => {
-//   console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`)
-//   for (let i = 0; i < 1; i++) {
-//     const oneMinute = 60 * 1000
-//     const randomDelay = Math.random() * 2 * oneMinute + 5 * oneMinute
-//     await delay(randomDelay)
-//     try {
-//       getMaticFaucet(i)
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-//   console.log(`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`)
-// }
+const getMaticFaucets = async () => {
+  console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`)
+  for (let i = 0; i < 1; i++) {
+    const oneMinute = 60 * 1000
+    const randomDelay = Math.random() * 2 * oneMinute + 5 * oneMinute
+    await delay(randomDelay)
+    try {
+      getMaticFaucet(i)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  console.log(`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`)
+}
 
-getMaticFaucet()
-// getMaticFaucets()
+// getMaticFaucet()
+getMaticFaucets()
