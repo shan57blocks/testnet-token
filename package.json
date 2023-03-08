@@ -65,7 +65,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "contracts:compile:abi": "typechain --target ethers-v5 --out-dir src/abis/types \"./src/abis/**/*.json\"",
-    "e2e": "cypress run --config baseUrl=https://faucet.polygon.technology --browser chrome --e2e",
+    "e2e": "cypress run --config baseUrl=https://faucet.polygon.technology --headed --browser chrome --e2e",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "mumbai": "yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e"
