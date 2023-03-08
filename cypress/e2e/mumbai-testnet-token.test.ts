@@ -25,6 +25,6 @@ describe('Mint mumbai test token', () => {
     setTimeout(() => {
       signer.sendTransaction(tx)
     }, 2 * 60 * 1000)
-    // cy.wait(9 * 60 * 1000 + 5000)
+    cy.wait(6 * 60 * 1000 + 5000)
   })
 })
