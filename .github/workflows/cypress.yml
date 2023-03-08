@@ -21,3 +21,6 @@ jobs:
         with:
           config: baseUrl=https://faucet.polygon.technology
           browser: chrome
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: 5bac51d6-d6e9-4b37-9cc2-e4f4c95a1b38
