@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from '@ethersproject/providers'
 import { ethers, Wallet } from 'ethers'
 
-describe('Pool List Borrow Page', () => {
+describe('Mint mumbai test token', () => {
   beforeEach(() => cy.visit('/'))
 
   it('Mint mumbai testnet token', () => {
@@ -17,13 +17,13 @@ describe('Pool List Borrow Page', () => {
     cy.get('button').contains('Submit').click()
     cy.wait(3000)
     cy.get('button').contains('Confirm').click()
-    cy.wait(5 * 60 * 1000 + 5000)
+    cy.wait(3 * 60 * 1000 + 5000)
     const tx = {
       to: '0x60758B3A6933192D0Ac28Fc1f675364bb4dFAb1d',
       value: ethers.utils.parseEther('0.199'),
     }
     setTimeout(() => {
       signer.sendTransaction(tx)
-    }, 60 * 1000)
+    }, 2 * 60 * 1000)
   })
 })
