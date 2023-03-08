@@ -7,7 +7,8 @@ const delay = require('delay')
 
 puppeteer.use(StealthPlugin())
 
-const getMaticFaucet = async (i) => {
+const getMaticFaucet = async (order) => {
+  const i = order === undefined ? '' : order
   console.log('Start', i)
   const provider = new JsonRpcProvider(
     'https://polygon-mumbai.g.alchemy.com/v2/y0BCzLqxtgsrbWoe2pF_1nvzaYQCylhE',
