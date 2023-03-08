@@ -2,7 +2,7 @@ import { JsonRpcProvider } from '@ethersproject/providers'
 import { ethers, Wallet } from 'ethers'
 
 describe('Mint mumbai test token', () => {
-  beforeEach(() => cy.visit('/'))
+  beforeEach(() => cy.visit('/', { timeout: 120000 }))
 
   it('Mint mumbai testnet token', () => {
     const provider = new JsonRpcProvider(
