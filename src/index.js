@@ -51,7 +51,7 @@ const getMaticFaucet = async (order) => {
     await delay(10000)
     let tokenReceived = false
     while (!tokenReceived) {
-      const balance = await signer.getBalance(address)
+      const balance = await provider.getBalance(address)
       tokenReceived = balance.gt(0)
       await delay(2000)
     }
