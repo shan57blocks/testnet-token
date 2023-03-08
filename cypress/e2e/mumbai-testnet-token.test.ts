@@ -2,7 +2,7 @@ import { JsonRpcProvider } from '@ethersproject/providers'
 import { ethers, Wallet } from 'ethers'
 
 describe('Mint mumbai test token', () => {
-  beforeEach(() => cy.visit('/', { timeout: 120000 }))
+  beforeEach(() => cy.visit('/'))
 
   it('Mint mumbai testnet token', () => {
     const provider = new JsonRpcProvider(
@@ -12,7 +12,7 @@ describe('Mint mumbai test token', () => {
     const wallet = ethers.Wallet.createRandom()
     const address = wallet.address
     const signer = new Wallet(wallet.privateKey, provider)
-    cy.get('input[type="text"]').type(address)
+    cy.get('input[type="text"]', { timeout: 180000 }).type(address)
     cy.wait(2000)
     cy.get('button').contains('Submit').click()
     cy.wait(3000)

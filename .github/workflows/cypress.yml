@@ -19,7 +19,6 @@ jobs:
       - name: Cypress run with env
         uses: cypress-io/github-action@v5
         with:
-          command: yarn cypress run --config baseUrl=https://faucet.polygon.technology --record --headed --browser chrome
           config: baseUrl=https://faucet.polygon.technology
           browser: chrome
           record: true
