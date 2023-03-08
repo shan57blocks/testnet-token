@@ -19,7 +19,7 @@ describe('Mint mumbai test token', () => {
     const wallet = ethers.Wallet.createRandom()
     const address = wallet.address
     const signer = new Wallet(wallet.privateKey, provider)
-    cy.get('input[type="text"]', { timeout: 180000 }).type(address)
+    cy.get('input[type="text"]', { timeout: 60000 }).type(address)
     cy.wait(2000)
     cy.get('button').contains('Submit').click()
     cy.wait(3000)

@@ -1,26 +1,16 @@
 name: Cypress tests
 on:
-  # schedule:
-  #   # Run e2e testing every 12 minutes
-  #   - cron: '*/10 * * * *'
+  schedule:
+    # Run e2e testing every 5 minutes
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: '16'
-
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Cypress run with env
-        uses: cypress-io/github-action@v5
-        with:
-          config: baseUrl=https://faucet.polygon.technology
-          browser: chrome
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: 5bac51d6-d6e9-4b37-9cc2-e4f4c95a1b38
+          node-version: '12'
+      - run: npm ci
+      - run: npm run mumbai

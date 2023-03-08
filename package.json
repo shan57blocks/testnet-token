@@ -41,12 +41,16 @@
     "buffer": "^6.0.3",
     "customize-cra": "^1.0.0",
     "dayjs": "^1.11.6",
+    "delay": "^5.0.0",
     "ethers": "^5.7.2",
     "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "history": "^5.3.0",
     "jotai": "^1.13.1",
     "moment": "^2.29.4",
+    "puppeteer": "^19.7.3",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
@@ -68,7 +72,7 @@
     "e2e": "cypress run --config baseUrl=https://faucet.polygon.technology --browser edge --e2e",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "mumbai": "yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e && yarn e2e"
+    "mumbai": "node ./src/index.js"
   },
   "husky": {
     "hooks": {
