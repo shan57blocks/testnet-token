@@ -25,7 +25,7 @@ class MetamaskBridge extends Eip1193Bridge {
     this.walletAddress = walletAddress
   }
 
-  chainId = 5
+  chainId = 80001
 
   async sendAsync(...args: any[]) {
     console.debug('sendAsync called', ...args)

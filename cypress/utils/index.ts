@@ -13,7 +13,7 @@ export const INVOICE_FACTORED_AMOUNT = 80
 export const INVOICE_FEES = 8
 
 const chain = { name: 'Mumbai', chainId: 80001 }
-const infuraKey = Cypress.env('E2E_TEST_INFURA_GOERLI')
+const infuraKey = Cypress.env('E2E_TEST_INFURA_MUMBAI')
 export const provider = new JsonRpcProvider(infuraKey, chain)
 
 export const privateKeyForTx = Cypress.env('E2E_TEST_PRIVATE_KEY')
