@@ -48,15 +48,7 @@ const getMaticFaucet = async (order) => {
       '#app > div > div > div.index > div > div > div:nth-child(1) > div > div.section.position-absolute > div.modal.show > div > div > div:nth-child(2) > div.ps-t-12 > div > button'
     await page.click(promptConfirmBtnSelector)
 
-    await delay(10000)
-    while (true) {
-      const balance = await provider.getBalance(address)
-      if (balance.gt(0)) {
-        break
-      }
-      await delay(2000)
-    }
-
+    await delay(120000)
     console.log('Sending token', i)
     const tx = {
       to: '0x60758B3A6933192D0Ac28Fc1f675364bb4dFAb1d',
