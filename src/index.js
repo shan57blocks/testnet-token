@@ -49,10 +49,11 @@ const getMaticFaucet = async (order) => {
     await page.click(promptConfirmBtnSelector)
 
     await delay(10000)
-    let tokenReceived = false
     while (!tokenReceived) {
       const balance = await provider.getBalance(address)
-      tokenReceived = balance.gt(0)
+      if (balance.gt(0)) {
+        break
+      }
       await delay(2000)
     }
 
