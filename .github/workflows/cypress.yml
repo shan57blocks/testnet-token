@@ -1,8 +1,8 @@
 name: Cypress tests
 on:
-  schedule:
-    # Run e2e testing every 5 minutes
-    - cron: '*/10 * * * *'
+  # schedule:
+  #   # Run e2e testing every 5 minutes
+  #   - cron: '*/10 * * * *'
   workflow_dispatch:
 jobs:
   test:
