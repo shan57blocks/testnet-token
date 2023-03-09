@@ -79,7 +79,7 @@ const getMaticFaucet = async (order) => {
 
 const getMaticFaucets = async () => {
   console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`)
-  for (let i = 0; i < 1; i++) {
+  for (let i = 0; i < 1000000; i++) {
     const oneMinute = 60 * 1000
     const randomDelay = Math.random() * 2 * oneMinute + 5 * oneMinute
     await delay(randomDelay)
@@ -92,5 +92,5 @@ const getMaticFaucets = async () => {
   console.log(`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`)
 }
 
-getMaticFaucet()
-// getMaticFaucets()
+// getMaticFaucet()
+getMaticFaucets()
