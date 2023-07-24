@@ -22,7 +22,7 @@ const getMaticFaucet = async (order) => {
   const signer = new Wallet(wallet.privateKey, provider)
 
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     executablePath: executablePath(),
   })
   const page = await browser.newPage()
@@ -80,13 +80,21 @@ const getMaticFaucet = async (order) => {
 const getMaticFaucets = async () => {
   console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`)
   for (let i = 0; i < 1000000; i++) {
-    const oneMinute = 60 * 1000
-    const randomDelay = Math.random() * 2 * oneMinute + 5 * oneMinute
-    await delay(randomDelay)
-    try {
-      getMaticFaucet(i)
-    } catch (error) {
-      console.log(error)
+    if (i === 0) {
+      try {
+        getMaticFaucet(i)
+      } catch (error) {
+        console.log(error)
+      }
+    } else {
+      const oneMinute = 60 * 1000
+      const randomDelay = Math.random() * 2 * oneMinute + 5 * oneMinute
+      await delay(randomDelay)
+      try {
+        getMaticFaucet(i)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
   console.log(`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`)
